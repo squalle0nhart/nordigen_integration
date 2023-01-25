@@ -37,6 +37,7 @@ class TransactionData {
     this.proprietaryBankTransactionCode,
     this.balanceAfterTransaction,
     this.links,
+    this.enrichment,
   });
 
   /// For easy Data Model Generation from Map fetched by querying Nordigen.
@@ -45,6 +46,7 @@ class TransactionData {
   /// [transactionAmount] field, is required as per API docs.
   factory TransactionData.fromMap(dynamic fetchedMap) => TransactionData(
         id: fetchedMap['transactionId'] as String?,
+        enrichment: fetchedMap['enrichment'] as String?,
         endToEndId: fetchedMap['endToEndId'] as String?,
         entryReference: fetchedMap['entryReference'] as String?,
         mandateId: fetchedMap['mandateId'] as String?,
@@ -105,6 +107,7 @@ class TransactionData {
         'checkId': checkId,
         'creditorId': creditorId,
         'bookingDate': bookingDate,
+        'enrichment': enrichment,
         'valueDate': valueDate,
         'transactionAmount': transactionAmount.toMap(),
         'currencyExchange': currencyExchange,
@@ -225,6 +228,8 @@ class TransactionData {
   /// The following links could be used here: transactionDetails for retrieving
   /// details of a transaction.
   final List<String>? links;
+
+  final String? enrichment;
 
   /// Returns the class data converted to a map as a Serialized JSON String.
   @override
