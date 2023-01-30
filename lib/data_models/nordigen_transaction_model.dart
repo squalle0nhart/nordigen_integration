@@ -7,7 +7,7 @@ part of 'package:nordigen_integration/nordigen_integration.dart';
 /// Refer https://nordigen.com/en/docs/account-information/output/transactions/.
 /// for all the optional and conditional (nullable) values.
 class TransactionData {
-  const TransactionData({
+  TransactionData({
     this.id,
     this.endToEndId,
     this.entryReference,
@@ -233,7 +233,7 @@ class TransactionData {
 
   final dynamic enrichment;
 
-  final double? balanceCal;
+  double? balanceCal;
 
   /// Returns the class data converted to a map as a Serialized JSON String.
   @override
