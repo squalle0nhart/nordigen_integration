@@ -37,6 +37,7 @@ class TransactionData {
     this.proprietaryBankTransactionCode,
     this.balanceAfterTransaction,
     this.links,
+    this.balanceCal,
     this.enrichment,
   });
 
@@ -94,6 +95,7 @@ class TransactionData {
             ? Balance.fromMap(fetchedMap['balanceAfterTransaction'])
             : null,
         links: fetchedMap['_links'] as List<String>?,
+        balanceCal: 0,
       );
 
   /// Forms a [Map] of [String] keys and [dynamic] values from Class Data.
@@ -230,6 +232,8 @@ class TransactionData {
   final List<String>? links;
 
   final dynamic enrichment;
+
+  final double? balanceCal;
 
   /// Returns the class data converted to a map as a Serialized JSON String.
   @override
