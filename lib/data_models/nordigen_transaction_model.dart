@@ -21,6 +21,7 @@ class TransactionData {
     this.creditorName,
     this.creditorAccount,
     this.creditorAgent,
+    this.internalTransactionId,
     this.ultimateCreditor,
     this.debtorName,
     this.debtorAccount,
@@ -65,6 +66,7 @@ class TransactionData {
         creditorName: fetchedMap['creditorName'] as String?,
         creditorAccount: fetchedMap['creditorAccount'] as Map<String, dynamic>?,
         creditorAgent: fetchedMap['creditorAgent'] as String?,
+        internalTransactionId: fetchedMap['internalTransactionId'] as String?,
         ultimateCreditor: fetchedMap['ultimateCreditor'] as String?,
         debtorName: fetchedMap['debtorName'] as String?,
         debtorAccount: fetchedMap['debtorAccount'] as Map<String, dynamic>?,
@@ -116,6 +118,7 @@ class TransactionData {
         'creditorName': creditorName,
         'creditorAccount': creditorAccount,
         'creditorAgent': creditorAgent,
+        'internalTransactionId': internalTransactionId,
         'ultimateCreditor': ultimateCreditor,
         'debtorName': debtorName,
         'debtorAccount': debtorAccount,
@@ -177,6 +180,9 @@ class TransactionData {
 
   /// BICFI of the Transaction creditor (if any)
   final String? creditorAgent;
+
+   /// BICFI of the Transaction creditor (if any)
+  final String? internalTransactionId;
 
   /// Transaction's ultimate creditor (if any)
   final String? ultimateCreditor;
