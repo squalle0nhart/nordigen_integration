@@ -20,7 +20,7 @@ part 'package:nordigen_integration/extensions/accounts.dart';
 
 /// Encapsulation of the Nordigen Open Account Information API functions.
 ///
-/// Requires either (as per https://ob.gocardless.com/user-secrets/):
+/// Requires either (as per https://bankaccountdata.gocardless.com/user-secrets/):
 /// 1. a Nordigen Access Token that has already been generated, to initialize
 /// using [NordigenAccountInfoAPI] constructor.
 ///
@@ -47,7 +47,7 @@ class NordigenAccountInfoAPI {
   /// for you and return a [Future] that resolves to the initialized
   /// [NordigenAccountInfoAPI] object using that Access Token.
   ///
-  /// https://ob.gocardless.com/user-secrets/
+  /// https://bankaccountdata.gocardless.com/user-secrets/
   static Future<NordigenAccountInfoAPI> fromSecret({
     required String secretID,
     required String secretKey,
@@ -63,7 +63,7 @@ class NordigenAccountInfoAPI {
   /// Static functionality to generate a Nordigen Access Token using a Nordigen
   /// user [secretID] (secret_id) and [secretKey] (secret_key). JWT pair getter.
   ///
-  /// https://ob.gocardless.com/user-secrets/
+  /// https://bankaccountdata.gocardless.com/user-secrets/
   ///
   /// https://nordigen.com/en/account_information_documenation/integration/parameters-and-responses/#/token/JWT%20Obtain
   static Future<Map<String, dynamic>> createAccessToken({
